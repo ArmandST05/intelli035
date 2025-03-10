@@ -1,0 +1,949 @@
+[29-Jun-2022 16:26:22 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/NotificationData.php(119): Model::one(false, Object(NotificationData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/NotificationData.php(125): NotificationData::getTotalSmsPurchases()
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/notifications/index-view.php(10): NotificationData::getAvailableSms()
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/View.php(29): include('/home4/mvillalp...')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(349): View::load('index')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#6 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#7 /home4/mvillalpando/public_html/Pow in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 44
+[06-Jul-2022 14:55:13 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/NotificationData.php(119): Model::one(false, Object(NotificationData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/NotificationData.php(125): NotificationData::getTotalSmsPurchases()
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/notifications/index-view.php(10): NotificationData::getAvailableSms()
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/View.php(29): include('/home4/mvillalp...')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(349): View::load('index')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#6 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#7 /home4/mvillalpando/public_html/Pow in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 44
+[14-Sep-2022 16:29:07 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'mvillalp_demo'@'%' to database 'mvillalp_doctor_nom_test' in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 10
+[14-Sep-2022 16:29:07 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 11
+[14-Sep-2022 16:29:07 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:07 America/Chicago] PHP Warning:  Executor::doit(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:07 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 44
+[14-Sep-2022 16:29:11 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'mvillalp_demo'@'%' to database 'mvillalp_doctor_nom_test' in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 10
+[14-Sep-2022 16:29:11 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 11
+[14-Sep-2022 16:29:11 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:11 America/Chicago] PHP Warning:  Executor::doit(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:11 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 44
+[14-Sep-2022 16:29:13 America/Chicago] PHP Warning:  mysqli::__construct(): (HY000/1044): Access denied for user 'mvillalp_demo'@'%' to database 'mvillalp_doctor_nom_test' in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 10
+[14-Sep-2022 16:29:13 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 11
+[14-Sep-2022 16:29:13 America/Chicago] PHP Warning:  mysqli::query(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:13 America/Chicago] PHP Warning:  Executor::doit(): Couldn't fetch mysqli in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php on line 10
+[14-Sep-2022 16:29:13 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 44
+[06-Oct-2022 11:54:45 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function getType() on null in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/action/inventory/add-output-product-action.php:3
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Action.php(22): include()
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(5): Action::load('inventory/add-o...')
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#4 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/action/inventory/add-output-product-action.php on line 3
+[13-Oct-2022 14:16:45 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function getPatient() on null in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/reservations/details-view.php:26
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/View.php(29): include()
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(349): View::load('index')
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/reservations/details-view.php on line 26
+[25-Oct-2022 11:42:48 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:26
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/OperationData.php(126): Model::many(false, Object(OperationData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/reports/invoices-view.php(57): OperationData::getAllSellFechas(NULL, NULL)
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/View.php(29): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(349): View::load('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#6 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#7 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20) in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 26
+[25-Oct-2022 11:43:07 America/Mexico_City] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php:26
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/model/OperationData.php(126): Model::many(false, Object(OperationData))
+#1 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/view/reports/invoices-view.php(57): OperationData::getAllSellFechas(NULL, NULL)
+#2 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/View.php(29): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(349): View::load('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#6 /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#7 /home4/mvillalpando/public_html/PowerDrNomDemo/index.php(20) in /home4/mvillalpando/public_html/PowerDrNomDemo/core/controller/Model.php on line 26
+[15-Dec-2022 13:00:58 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:03:45 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:03:48 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:03:49 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:03:57 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:04:45 America/Mexico_City] PHP Fatal error:  Composer detected issues in your platform: Your Composer dependencies require a PHP version ">= 8.0.0". You are running 7.3.33. in /home4/mvillalpando/public_html/PowerDrNomDemo/vendor/composer/platform_check.php on line 24
+[15-Dec-2022 13:05:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 13:05:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 13:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 13:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 15:29:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 15:29:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 18:21:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 18:21:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 18:25:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[15-Dec-2022 18:25:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[17-Dec-2022 05:10:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[17-Dec-2022 05:10:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[20-Dec-2022 06:29:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[20-Dec-2022 06:29:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[20-Dec-2022 16:20:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[20-Dec-2022 16:20:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[24-Dec-2022 08:11:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[24-Dec-2022 08:11:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:13:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:00 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:01 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:02 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:02 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:05 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:05 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:17 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:13:18 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:44
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/UserData.php(46): Model::one(false, Object(UserData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Module.php(12): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(12): Module::loadLayout('index')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 44
+[27-Dec-2022 11:30:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:30:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:31:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:31:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:31:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:31:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:37:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:37:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:38:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:38:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:42:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:42:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:46:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:46:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:47:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:47:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:48:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:48:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:50:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:50:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:51:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:51:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:51:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 11:51:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 13:34:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 13:34:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 14:12:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:01:41 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:01:41 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:01:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:01:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:02:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:02:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:03:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[27-Dec-2022 19:03:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 01:15:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 01:15:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 01:15:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 01:15:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 04:39:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 04:39:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 06:14:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:08:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:08:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:58:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:58:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:59:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 07:59:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 13:13:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 13:13:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 13:13:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 13:13:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 14:47:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 14:47:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:49:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:49:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:50:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:50:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:52:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:52:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:55:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:55:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:57:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:57:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:57:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:57:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:58:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 15:58:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:00:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:00:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:06:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:06:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 16:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 17:28:27 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 17:28:30 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 17:35:57 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 17:36:00 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 18:00:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:00:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:04:15 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 18:04:17 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 18:08:41 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 18:08:43 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[28-Dec-2022 18:13:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:13:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:13:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:13:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:28:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:28:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:29:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:29:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:30:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 18:30:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:05:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:05:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:05:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:05:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:22:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[28-Dec-2022 22:22:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:09:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:13:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:13:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:13:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 03:13:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 08:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 08:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 08:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 08:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 11:33:01 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 11:33:01 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 11:50:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 11:50:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 12:06:04 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 12:06:06 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 12:17:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 12:17:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 12:33:05 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 12:33:08 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 12:34:44 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 12:34:46 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 13:14:03 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:26
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/MedicineData.php(44): Model::many(false, Object(MedicineData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/action/medicines/get-search-action.php(3): MedicineData::getBySearch('CIPLOFLOXACIN'')
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Action.php(22): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(5): Action::load('medicines/get-s...')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 26
+[29-Dec-2022 13:14:06 America/Chicago] PHP Fatal error:  Uncaught Error: Call to a member function fetch_array() on bool in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php:26
+Stack trace:
+#0 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/model/MedicineData.php(44): Model::many(false, Object(MedicineData))
+#1 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/action/medicines/get-search-action.php(3): MedicineData::getBySearch('CIPLOFLOXACIN'O')
+#2 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Action.php(22): include('/home4/mvillalp...')
+#3 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/init.php(5): Action::load('medicines/get-s...')
+#4 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Lb.php(13): include('/home4/mvillalp...')
+#5 /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/index.php(20): Lb->start()
+#6 {main}
+  thrown in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/controller/Model.php on line 26
+[29-Dec-2022 13:21:15 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 13:21:17 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 13:23:57 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 13:23:59 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 15:06:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 15:06:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 15:06:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 15:06:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 17:40:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 17:40:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 17:43:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 17:43:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 17:45:29 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 17:45:31 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 17:47:48 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 17:47:51 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 18:08:27 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 18:08:30 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[29-Dec-2022 19:35:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 19:35:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 23:08:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 23:08:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 23:08:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[29-Dec-2022 23:08:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 06:14:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 06:14:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 06:14:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 06:14:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 09:23:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 09:23:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 09:23:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 09:23:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 10:39:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 10:39:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 13:16:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 13:16:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 13:16:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 13:16:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 16:43:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 16:43:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 16:44:07 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[30-Dec-2022 16:44:15 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[30-Dec-2022 19:12:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 19:12:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 21:02:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 21:02:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 21:02:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[30-Dec-2022 21:02:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 03:04:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 03:04:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 03:04:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 03:04:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 10:02:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 10:02:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 10:02:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 10:02:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 12:05:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 12:05:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 16:13:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 16:13:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 16:13:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 16:13:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 22:06:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 22:06:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 22:06:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[31-Dec-2022 22:06:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 05:14:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 05:14:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 05:14:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 05:14:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 11:13:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 11:13:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 11:13:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 11:13:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 21:06:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 21:06:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 21:06:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[01-Jan-2023 21:06:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 07:09:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 07:09:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 07:09:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 07:09:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 10:49:04 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 10:49:04 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 16:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 16:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 16:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 16:11:17 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 22:13:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[02-Jan-2023 22:13:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 02:09:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 02:09:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 02:09:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 02:09:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 09:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 09:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 09:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 09:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 11:08:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 11:08:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 11:08:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 11:08:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 15:22:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 15:22:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 20:15:26 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 20:15:26 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 20:15:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[03-Jan-2023 20:15:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 05:13:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 05:13:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 05:13:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 05:13:14 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 11:30:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 11:30:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 11:30:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 11:30:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 11:45:47 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[04-Jan-2023 11:45:49 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[04-Jan-2023 15:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 15:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 15:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 15:07:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 15:23:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 15:23:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 16:17:17 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[04-Jan-2023 16:17:19 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[04-Jan-2023 19:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[04-Jan-2023 19:17:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 00:16:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 00:16:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 00:16:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 00:16:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 10:04:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 10:04:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 10:04:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 10:04:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 12:41:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 12:41:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:41:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:41:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:42:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:42:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:42:28 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[05-Jan-2023 13:42:31 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[05-Jan-2023 13:47:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:47:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:47:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:47:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:48:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 13:48:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 15:21:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 15:21:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:08:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:12:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:12:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:12:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 19:12:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 20:56:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[05-Jan-2023 20:56:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 05:11:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 05:11:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 05:11:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 05:11:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 11:33:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 11:33:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 15:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 15:08:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 15:09:05 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 15:09:05 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 18:50:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[06-Jan-2023 18:50:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 00:07:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 00:07:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 01:04:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 01:04:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 01:05:26 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 01:05:26 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 10:06:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 10:06:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 10:06:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 10:06:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 18:50:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 18:50:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 19:10:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 19:10:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 19:11:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[07-Jan-2023 19:11:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 05:07:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 05:07:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 05:07:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 05:07:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 12:12:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 12:12:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 18:06:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 18:06:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 18:06:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[08-Jan-2023 18:06:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 07:12:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 07:12:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 07:12:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 07:12:29 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 12:13:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 12:13:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 18:16:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[09-Jan-2023 18:16:27 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 10:21:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 10:21:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 11:22:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 11:22:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:03:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:14:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[10-Jan-2023 21:14:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 09:16:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 09:16:11 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 09:16:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 09:16:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 10:01:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 10:01:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 10:35:23 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[11-Jan-2023 10:35:25 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[11-Jan-2023 11:53:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 11:53:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 12:08:17 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[11-Jan-2023 12:08:20 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 55
+[11-Jan-2023 21:08:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 21:08:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 21:08:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[11-Jan-2023 21:08:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 09:09:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 09:09:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 09:09:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 09:09:49 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 13:57:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 13:57:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 22:06:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 22:06:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 22:06:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[12-Jan-2023 22:06:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 10:15:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 10:15:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:02:41 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:02:41 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:02:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:02:43 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:44:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[13-Jan-2023 11:44:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 00:11:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 00:11:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 00:11:01 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 00:11:01 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 04:35:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 04:35:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 13:04:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 13:04:44 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 13:04:45 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[14-Jan-2023 13:04:45 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 03:22:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 03:22:07 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 03:22:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 03:22:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 15:04:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 15:04:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:05:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:05:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:05:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:05:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:55:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[15-Jan-2023 16:55:23 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 05:20:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 05:20:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 05:20:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 05:20:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 12:35:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[16-Jan-2023 12:35:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 08:16:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 08:16:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 09:46:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 09:46:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 11:13:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[17-Jan-2023 11:13:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[18-Jan-2023 11:53:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[18-Jan-2023 11:53:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 00:11:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 00:11:50 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 12:55:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 12:55:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 12:55:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 12:55:02 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 86
+[19-Jan-2023 14:49:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[19-Jan-2023 14:49:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[19-Jan-2023 14:55:11 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 12:22:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:22:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:23:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:23:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:24:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:24:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 12:52:22 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 12:52:24 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 13:05:05 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 13:05:07 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 13:14:11 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 13:14:13 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 13:40:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 13:40:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 13:40:52 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 15:01:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 15:01:00 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 15:54:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 15:54:53 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 15:58:46 America/Mexico_City] PHP Warning:  Attempt to read property "name" on null in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/medics/index-view.php on line 38
+[20-Jan-2023 16:03:25 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:03:27 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:05:40 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:05:43 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:21:10 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:21:14 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:33:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 16:33:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 16:40:07 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 16:40:08 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[20-Jan-2023 17:23:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 17:23:36 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 18:21:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[20-Jan-2023 18:21:12 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 02:33:03 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 02:33:03 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 10:59:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 10:59:32 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 16:17:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 16:17:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 16:18:28 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[21-Jan-2023 16:18:31 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[21-Jan-2023 17:45:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 17:45:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[21-Jan-2023 19:10:08 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[21-Jan-2023 19:10:11 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[21-Jan-2023 19:38:14 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[21-Jan-2023 19:38:16 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[22-Jan-2023 12:27:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[22-Jan-2023 12:27:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[23-Jan-2023 09:33:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[23-Jan-2023 09:33:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 09:55:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 09:55:28 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 13:01:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 13:01:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 17:50:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 17:50:19 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 17:51:17 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[24-Jan-2023 17:51:21 America/Mexico_City] PHP Warning:  Undefined property: MedicData::$is_file_key in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/view/reservations/report-prescription-view.php on line 73
+[24-Jan-2023 19:33:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 19:33:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 22:28:25 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-Jan-2023 22:28:25 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[25-Jan-2023 10:59:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[25-Jan-2023 10:59:21 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[25-Jan-2023 16:51:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[25-Jan-2023 16:51:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 04:31:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 04:31:10 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 15:02:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 15:02:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 23:17:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[27-Jan-2023 23:17:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 17:31:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 17:31:08 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 20:28:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 20:28:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 20:28:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[28-Jan-2023 20:28:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home4/mvillalpando/public_html/PowerDrNomCortesYllescas/core/app/layouts/layout.php on line 87
+[24-May-2023 00:35:08 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 10
+[24-May-2023 00:35:08 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php:11
+Stack trace:
+#0 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php(11): mysqli->query('set sql_mode=''')
+#1 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php(18): Database->connect()
+#2 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php(6): Database::getCon()
+#3 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/model/UserData.php(45): Executor::doit('SELECT * FROM u...')
+#4 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#5 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home/mvillalpa...')
+#6 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#7 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home/mvillalpa...')
+#8 /home/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#9 {main}
+  thrown in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 11
+[24-May-2023 03:20:51 UTC] PHP Warning:  mysqli::__construct(): (HY000/1045): Access denied for user 'root'@'localhost' (using password: NO) in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 10
+[24-May-2023 03:20:51 UTC] PHP Fatal error:  Uncaught Error: mysqli object is already closed in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php:11
+Stack trace:
+#0 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php(11): mysqli->query('set sql_mode=''')
+#1 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php(18): Database->connect()
+#2 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Executor.php(6): Database::getCon()
+#3 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/model/UserData.php(45): Executor::doit('SELECT * FROM u...')
+#4 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php(3): UserData::getLoggedIn()
+#5 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Module.php(12): include('/home/mvillalpa...')
+#6 /home/mvillalpando/public_html/PowerDrNomDemo/core/app/init.php(12): Module::loadLayout('index')
+#7 /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Lb.php(13): include('/home/mvillalpa...')
+#8 /home/mvillalpando/public_html/PowerDrNomDemo/index.php(20): Lb->start()
+#9 {main}
+  thrown in /home/mvillalpando/public_html/PowerDrNomDemo/core/controller/Database.php on line 11
+[24-May-2023 02:08:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 02:08:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 06:55:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 06:55:35 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:05:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:05:18 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:19:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:19:58 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:38:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:38:47 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:48:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[24-May-2023 18:48:13 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[25-May-2023 01:24:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[25-May-2023 01:24:22 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[25-May-2023 01:40:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[25-May-2023 01:40:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 03:54:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 03:54:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 20:04:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 20:04:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 21:46:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-May-2023 21:46:52 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[27-May-2023 13:22:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[27-May-2023 13:22:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[27-May-2023 13:26:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[27-May-2023 13:26:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 03:06:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 03:06:42 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 05:19:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 05:19:56 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 05:24:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 05:24:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 16:34:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[28-May-2023 16:34:06 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[29-May-2023 04:08:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[29-May-2023 04:08:48 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 01:52:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 01:52:38 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 11:45:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 11:45:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 12:23:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[31-May-2023 12:23:55 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jun-2023 02:26:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jun-2023 02:26:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jun-2023 22:46:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jun-2023 22:46:33 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[03-Jun-2023 01:07:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[03-Jun-2023 01:07:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jun-2023 14:16:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jun-2023 14:16:15 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jun-2023 21:25:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jun-2023 21:25:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[11-Jun-2023 11:14:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[11-Jun-2023 11:14:16 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[15-Jun-2023 17:12:51 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[15-Jun-2023 17:12:51 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[17-Jun-2023 11:49:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[17-Jun-2023 11:49:34 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[19-Jun-2023 04:35:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[19-Jun-2023 04:35:37 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[20-Jun-2023 17:39:51 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[20-Jun-2023 17:39:51 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[23-Jun-2023 12:46:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[23-Jun-2023 12:46:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-Jun-2023 17:40:39 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[26-Jun-2023 17:40:39 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[30-Jun-2023 04:43:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[30-Jun-2023 04:43:46 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jul-2023 23:48:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[01-Jul-2023 23:48:30 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jul-2023 04:39:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[08-Jul-2023 04:39:24 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[09-Jul-2023 11:14:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[09-Jul-2023 11:14:40 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 19:35:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 19:35:57 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:05:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:05:31 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:11:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:11:09 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:21:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:21:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:29:45 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[04-Aug-2023 20:29:45 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[16-Aug-2023 13:08:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[16-Aug-2023 13:08:59 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[22-Aug-2023 14:30:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
+[22-Aug-2023 14:30:54 America/Mexico_City] PHP Warning:  Undefined variable $userType in /home/mvillalpando/public_html/PowerDrNomDemo/core/app/layouts/layout.php on line 87
