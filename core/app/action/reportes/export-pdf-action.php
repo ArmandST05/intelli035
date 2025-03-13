@@ -7,8 +7,7 @@ $conn = Database::getCon(); // Conexión a la BD
 if (isset($_GET['encuesta_id']) && isset($_GET['personal_id'])) {
     $encuesta_id = $_GET['encuesta_id'];
     $personal_id = $_GET['personal_id'];
-    $encuesta_id = $_GET['encuesta_id'];
-    $personal_id = $_GET['personal_id'];
+
 
     // Obtener el nombre de la encuesta
     $encuesta_sql = "SELECT title FROM surveys WHERE id = $encuesta_id";
