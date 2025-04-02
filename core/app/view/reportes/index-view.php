@@ -149,10 +149,11 @@
         // Obtener el HTML modificado
         var tableHtml = clonedTable.html();
 
-        if (!tableHtml) {
-            alert("No hay contenido en la tabla.");
-            return;
-        }
+        if (!tableHtml.trim()) { // Validar que no esté vacío
+    alert("No hay contenido en la tabla.");
+    return;
+}
+
 
         // Enviamos el HTML modificado y el nombre del empleado al backend
         $.ajax({
