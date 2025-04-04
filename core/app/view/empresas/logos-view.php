@@ -67,8 +67,8 @@
     </p>
     <table class="table">
         <tr><td>1.-Subir una imagen en formato .jpg, .png o .jpeg</td></tr>
-        <tr><td>2.- El archivo debe de pesar más de 2 MB.</td></tr>
-        <tr><td>3.- Asegurate de que la empresa del logo que vas a agregar este disponible</td></tr>
+        <tr><td>2.- El archivo debe de pesar menos de 2 MB.</td></tr>
+        <tr><td>3.- Asegúrate de que la empresa del logo que vas a agregar esté disponible</td></tr>
     </table>
 
     <form id="uploadForm" enctype="multipart/form-data">

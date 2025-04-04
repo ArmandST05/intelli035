@@ -215,10 +215,7 @@ if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] === 'e') {
                 <li class="treeview">
                   <a href="#"><i class='fas fa-cog'></i> <span>Configuración</span> <i class="fas fa-angle-left pull-right"></i></a>
                   <ul class="treeview-menu">
-                    <li><a href="./?view=configuration/edit-clinic-profile">Perfil Clínica</a></li>
-                    <?php if (isset($medic)) : ?>
-                      <li><a href="./?view=configuration/edit-medic-profile">Perfil Médico</a></li>
-                    <?php endif; ?>
+                    
                     <li><a href="./?view=users/index">Usuarios</a></li>
                   </ul>
                 </li>

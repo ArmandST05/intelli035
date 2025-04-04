@@ -52,7 +52,7 @@
     </style>
 </head>
 <body>
-    <h1>Resultados de encuestas por categoria</h1>
+    <h1>Resultados de encuestas por categoría</h1>
 
     <form id="resultados-form">
     <div class="row">
