@@ -44,12 +44,37 @@
             font-size: 14px;
             color: #555;
         }
+        input[type="file"] {
+            display: none;
+        }
+
+        /* Loader Spinner */
+        #loader {
+            display: none;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .spinner {
+            border: 6px solid #f3f3f3;
+            border-top: 6px solid #007bff;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
 </head>
 <body>
 
 <div class="card">
-<div class="form-group">
+    <div class="form-group">
         <select name="empresa_id" id="empresa_id" class="form-control">
             <option value="">Seleccione una empresa</option>
             <?php 
@@ -60,7 +85,7 @@
             ?>
         </select>
     </div> 
-<p>
+    <p>
         Si su empresa no aparece, favor de agregarla en el apartado de <a href="index.php?view=empresas/index">Empresas</a>.
     </p>
     <table class="table">
@@ -75,10 +100,15 @@
     <form id="uploadForm" enctype="multipart/form-data">
         <div class="drop-zone" id="dropZone">
             Arrastre y suelte su archivo aquí o haga clic para seleccionarlo.
-            <input type="file" name="file" id="file" accept=".xls,.xlsx,.csv" style="display: none;" required>
+            <input type="file" name="file" id="file" accept=".xls,.xlsx,.csv" required>
         </div>
     </form>
 
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+        <p>Cargando archivo...</p>
+    </div>
 
     <div id="response"></div>
 </div>
@@ -88,6 +118,7 @@
 $(document).ready(function () {
     const dropZone = document.getElementById('dropZone');
     const fileInput = document.getElementById('file');
+    const loader = $('#loader');
 
     dropZone.addEventListener('click', () => {
         fileInput.click();
@@ -113,6 +144,10 @@ $(document).ready(function () {
         }
     });
 
+    $('#file').on('change', function () {
+        handleFileUpload();
+    });
+
     $('#uploadForm').on('submit', function (event) {
         event.preventDefault();
         handleFileUpload();
@@ -128,6 +163,8 @@ $(document).ready(function () {
         const formData = new FormData($('#uploadForm')[0]);
         formData.append('empresa_id', empresaId);
 
+        loader.show(); // Mostrar loader
+
         $.ajax({
             url: './?action=personal/carga',
             type: 'POST',
@@ -135,9 +172,11 @@ $(document).ready(function () {
             contentType: false,
             processData: false,
             success: function (response) {
+                loader.hide(); // Ocultar loader
                 $('#response').html(response);
             },
             error: function (xhr) {
+                loader.hide(); // Ocultar loader
                 $('#response').html(
                     `Error al subir el archivo. Código: ${xhr.status} <br> ${xhr.responseText}`
                 );
@@ -145,7 +184,6 @@ $(document).ready(function () {
         });
     }
 });
-
 </script>
 
 </body>

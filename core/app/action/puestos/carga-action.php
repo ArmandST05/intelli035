@@ -31,22 +31,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $cellIterator->setIterateOnlyExistingCells(false);
 
             foreach ($cellIterator as $cell) {
-                $rowData[] = trim($cell->getValue());
+                $valorCelda = $cell->getValue();
+                $rowData[] = trim((string) $valorCelda);
             }
+            
 
             if (count($rowData) === 2) {
                 list($nombrePuesto, $nombreDepartamento) = $rowData;
+            
+                // Ignora si alguno de los campos está vacío
+                if (empty($nombrePuesto) || empty($nombreDepartamento)) {
+                    continue;
+                }
+            
                 $nombreDepartamento = strtoupper(trim($nombreDepartamento));
                 $nombrePuesto = strtoupper(trim($nombrePuesto));
-
+            
                 if (!in_array($nombreDepartamento, $departments)) {
                     $departments[] = $nombreDepartamento;
                 }
+            
                 $positions[] = [
                     'puesto' => $nombrePuesto,
                     'departamento' => $nombreDepartamento
                 ];
             }
+            
         }
 
         $departmentIds = [];
