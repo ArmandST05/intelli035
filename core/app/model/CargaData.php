@@ -74,20 +74,42 @@ public function cleanData($data) {
         return Executor::doit($sql);
     }
     public function insertDepartment($nombreDepartamento) {
-        $stmt = $this->db->prepare("INSERT INTO departamentos (nombre) VALUES (?) ON DUPLICATE KEY UPDATE idDepartamento=LAST_INSERT_ID(idDepartamento)");
+        $stmt = $this->db->prepare("INSERT INTO departamentos (nombre) VALUES (?)");
+    
+        if (!$stmt) {
+            echo "❌ Error en prepare (departamento): " . $this->db->error . "<br>";
+            return null;
+        }
+    
         $stmt->bind_param("s", $nombreDepartamento);
-        $stmt->execute();
-        $idDepartamento = $stmt->insert_id;
+    
+        if ($stmt->execute()) {
+            $idDepartamento = $stmt->insert_id;
+        } else {
+            echo "❌ Error al insertar departamento ($nombreDepartamento): " . $stmt->error . "<br>";
+            $idDepartamento = null;
+        }
+    
         $stmt->close();
         return $idDepartamento;
     }
-    
     public function insertPosition($nombrePuesto, $idDepartamento) {
         $stmt = $this->db->prepare("INSERT INTO puestos (nombre, idDepartamento) VALUES (?, ?)");
+    
+        if (!$stmt) {
+            echo "❌ Error en prepare (puesto): " . $this->db->error . "<br>";
+            return;
+        }
+    
         $stmt->bind_param("si", $nombrePuesto, $idDepartamento);
-        $stmt->execute();
+    
+        if (!$stmt->execute()) {
+            echo "❌ Error al insertar puesto ($nombrePuesto): " . $stmt->error . "<br>";
+        }
+    
         $stmt->close();
     }
+    
     
 }
 ?>
