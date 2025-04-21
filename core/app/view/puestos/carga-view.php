@@ -81,7 +81,7 @@
     <tr><td>2.- El archivo debe pesar menos de 2 MB.</td></tr>
     <tr><td>3.- Debe contener 2 encabezados con los siguientes nombres exactos: <br> <strong>nombre</strong>, <strong>departamento</strong>.</td></tr>
     <tr><td>4.- A continuación, podrá descargar un ejemplo del formato de carga masiva. Sustituya los campos con los datos que desea cargar, 
-            asegúrese de no dejar campos en blanco y que no estén duplicados. <a href="#">Descargar ejemplo</a></td></tr>
+            asegúrese de no dejar campos en blanco y que no estén duplicados. <a href="assets/carga_puestos.xlsx" download>Descargar ejemplo</a></td></tr>
   </table>
 
   <form id="uploadForm" enctype="multipart/form-data">

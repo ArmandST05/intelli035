@@ -36,6 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $positions = [];
 
         foreach ($sheet->getRowIterator() as $row) {
+            if ($row->getRowIndex() == 1) {
+                continue; // Saltar encabezado
+            }
             $rowData = [];
             $cellIterator = $row->getCellIterator();
             $cellIterator->setIterateOnlyExistingCells(false);

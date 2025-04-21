@@ -35,11 +35,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $spreadsheet = \PhpOffice\PhpSpreadsheet\IOFactory::load($fileTmpPath);
             $sheet = $spreadsheet->getActiveSheet();
 
-            $firstRow = true; // Variable para omitir la primera fila
+            $firstRow = true;
 
             foreach ($sheet->getRowIterator() as $row) {
                 if ($firstRow) {
-                    $firstRow = false; // Omitir la primera fila (encabezados)
+                    $firstRow = false;
                     continue;
                 }
 
@@ -48,24 +48,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $cellIterator->setIterateOnlyExistingCells(false);
 
                 foreach ($cellIterator as $cell) {
-                    $rowData[] = strval($cell->getFormattedValue() ?? ''); // Convertir null a cadena vacía
+                    $rowData[] = strval($cell->getFormattedValue() ?? '');
                 }
 
-                // Verificar si la fila está completamente vacía
                 if (empty(array_filter($rowData, fn($value) => trim($value) !== ''))) {
-                    continue; // Omitir filas completamente vacías
+                    continue;
                 }
 
-                // Verificar que la fila tenga exactamente 5 valores
                 if (count($rowData) === 5) {
-                    list($nombre, $puesto, $departamento, $correo, $telefono) = array_map(fn($val) => trim($val ?? ''), $rowData);
+                    list($nombre, $puestoNombre, $departamentoNombre, $correo, $telefono) = array_map('trim', $rowData);
 
-                    // Si el campo de correo está vacío, asignarle un valor predeterminado
                     if ($correo === '') {
                         $correo = "sin correo";
                     }
 
-                    // Generar usuario aleatorio
                     $iniciales = strtoupper(substr($nombre, 0, 1));
                     $palabras = explode(' ', $nombre);
                     if (count($palabras) > 1) {
@@ -74,24 +70,32 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $numeroAzar = rand(100000, 999999);
                     $usuario = 'u' . $iniciales . $numeroAzar;
 
-                    // Generar contraseña aleatoria
                     $longitudClave = rand(6, 8);
                     $clave = substr(str_shuffle("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"), 0, $longitudClave);
 
-                    // Obtener IDs de puesto y departamento
-                    $positions = $cargaData->getPositions();
-                    $departments = $cargaData->getDepartments();
-                    $puesto = strtoupper(trim($puesto));
-                    $departamento = strtoupper(trim($departamento));
-                    $id_puesto = $positions[$puesto] ?? null;
-                    $id_departamento = $departments[$departamento] ?? null;
+                    // Convertimos a mayúsculas los nombres para evitar duplicados por diferencias de formato
+                    $departamentoNombre = strtoupper($departamentoNombre);
+                    $puestoNombre = strtoupper($puestoNombre);
 
-                    // Insertar en la base de datos
+                    // Usar métodos que hacen SELECT para evitar duplicados
+                    $id_departamento = $cargaData->insertOrGetDepartamento($departamentoNombre);
+                    $id_puesto = $cargaData->insertOrGetPuesto($puestoNombre, $id_departamento);
+
+                    // Insertar personal
                     $fecha_alta = date('Y-m-d H:i:s');
-                    $insertSuccess = $cargaData->insertIntoDatabase($nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta);
+                    $insertSuccess = $cargaData->insertIntoPersonal(
+                        $nombre,
+                        $id_puesto,
+                        $id_departamento,
+                        $correo,
+                        $telefono,
+                        $usuario,
+                        $clave,
+                        $fecha_alta
+                    );
 
                     if (!$insertSuccess) {
-                        echo "❌ Error al insertar algunos datos en la base de datos.<br>";
+                        echo "❌ Error al insertar algunos datos del personal.<br>";
                     }
                 } else {
                     echo "⚠️ Advertencia: Filas incompletas o con datos vacíos fueron omitidas.<br>";
@@ -108,5 +112,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 } else {
     die("❌ Error: Método no permitido.");
 }
-
-?>

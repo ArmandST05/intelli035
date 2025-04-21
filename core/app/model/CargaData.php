@@ -94,7 +94,7 @@ public function cleanData($data) {
         return $idDepartamento;
     }
     public function insertPosition($nombrePuesto, $idDepartamento) {
-        $stmt = $this->db->prepare("INSERT INTO puestos (nombre, idDepartamento) VALUES (?, ?)");
+        $stmt = $this->db->prepare("INSERT INTO puestos (nombre, id_departamento) VALUES (?, ?)");
     
         if (!$stmt) {
             echo "❌ Error en prepare (puesto): " . $this->db->error . "<br>";
@@ -109,7 +109,45 @@ public function cleanData($data) {
     
         $stmt->close();
     }
+    public function insertOrGetDepartamento($nombre) {
+        $stmt = $this->db->prepare("SELECT idDepartamento FROM departamentos WHERE nombre = ?");
+        $stmt->bind_param("s", $nombre);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            return $row['idDepartamento'];
+        } else {
+            $stmt = $this->db->prepare("INSERT INTO departamentos (nombre) VALUES (?)");
+            $stmt->bind_param("s", $nombre);
+            $stmt->execute();
+            return $this->db->insert_id;
+        }
+    }
     
+    public function insertOrGetPuesto($nombre, $departamento_id) {
+        $stmt = $this->db->prepare("SELECT id FROM puestos WHERE nombre = ? AND id_departamento = ?");
+        $stmt->bind_param("si", $nombre, $departamento_id);
+        $stmt->execute();
+        $result = $stmt->get_result();
+        if ($row = $result->fetch_assoc()) {
+            return $row['id'];
+        } else {
+            $stmt = $this->db->prepare("INSERT INTO puestos (nombre, id_departamento) VALUES (?, ?)");
+            $stmt->bind_param("si", $nombre, $departamento_id);
+            $stmt->execute();
+            return $this->db->insert_id;
+        }
+    }
+    
+    
+    
+
+// Insertar personal
+public function insertIntoPersonal($nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta) {
+    $stmt = $this->db->prepare("INSERT INTO personal (nombre, id_puesto, id_departamento, correo, telefono, usuario, clave, fecha_alta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    return $stmt->execute([$nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta]);
+}
+
     
 }
 ?>
