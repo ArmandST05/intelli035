@@ -95,7 +95,6 @@
             <strong>nombre</strong>, <strong>puesto</strong>, <strong>departamento</strong>, <strong>correo</strong>, <strong>teléfono</strong>.</td></tr>
         <tr><td>4.- A continuación, podrá descargar un ejemplo del formato de carga masiva. Sustituya los campos por los datos que desea cargar, 
                 asegúrese de no dejar campos en blanco y que no estén duplicados.<a href="assets/carga_personal.xlsx" download>Descargar ejemplo</a></td></tr>
-        <tr><td style="background-color:rgb(255, 103, 103);">5.- Asegurate de cargar antes los puestos y departamentos del excel</td></tr>
     </table>
 
     <form id="uploadForm" enctype="multipart/form-data">

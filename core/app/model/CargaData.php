@@ -142,12 +142,21 @@ public function cleanData($data) {
     
     
 
-// Insertar personal
-public function insertIntoPersonal($nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta) {
-    $stmt = $this->db->prepare("INSERT INTO personal (nombre, id_puesto, id_departamento, correo, telefono, usuario, clave, fecha_alta) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-    return $stmt->execute([$nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta]);
-}
-
+    public function insertIntoPersonal($nombre, $id_puesto, $id_departamento, $correo, $telefono, $usuario, $clave, $fecha_alta) {
+        $stmt = $this->db->prepare("INSERT INTO personal (nombre, id_puesto, id_departamento, correo, telefono, usuario, clave, fecha_alta, empresa_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        return $stmt->execute([
+            $nombre,
+            $id_puesto,
+            $id_departamento,
+            $correo,
+            $telefono,
+            $usuario,
+            $clave,
+            $fecha_alta,
+            $this->empresa_id  // 👈 Aquí ya estás usando el ID de la empresa que seteaste antes
+        ]);
+    }
+    
     
 }
 ?>
