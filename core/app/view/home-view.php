@@ -25,8 +25,9 @@ $encuestas = EncuestaData::getAll();
             <div class="col-md-4">
                 <div class="d-flex flex-column gap-2">
                     
-                            <button type="button" class="btn btn-primary" onclick="openModalAddPersonal()">Agregar Personal</button>
-                                         
+                    <button type="button" class="btn btn-primary" onclick="openModalAddPersonal()">Agregar Personal</button>
+                    <button type="button" class="btn btn-primary" onclick="printPersonal()">Imprimir lista</button>
+       
                 </div>
             </div>
         </div>
@@ -73,6 +74,7 @@ $encuestas = EncuestaData::getAll();
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Departamento / Puesto</th>
+                    <th>Empresa</th>
                     <th>Usuario</th>
                     <th>Clave</th>
                     <th>Correo</th>
@@ -81,7 +83,7 @@ $encuestas = EncuestaData::getAll();
                 </tr>
             </thead>
             <tbody>
-                <!-- El cuerpo se gestionará dinámicamente por DataTables -->
+                <!-- El cuerpo se gestionará dinámicamente por DataTable -->
             </tbody>
         </table>
     </div>
@@ -105,7 +107,7 @@ $encuestas = EncuestaData::getAll();
                     <form id="addPersonal" action="index.php?action=personal/add" method="POST"> 
                         <div class="form-group">
                             <label for="employeeName">Nombre del Personal</label>
-                            <input type="text" class="form-control" id="employeeName" placeholder="Ingrese el nombre">
+                            <input type="text" class="form-control" id="employeeName" placeholder="Ingrese el nombre" required>
                         </div>
                         <div class="form-group">
                             <label for="employeeEmail">Correo Electrónico</label>
@@ -185,7 +187,18 @@ $encuestas = EncuestaData::getAll();
     </div>
     <div class="form-group">
         <label for="editEmployeeRole">Puesto</label>
-        <input type="text" class="form-control" id="editEmployeeRole" placeholder="Ingrese el puesto">
+        <select class="form-control" id="editEmployeeRole" >
+                 <option value="">Seleccione un puesto</option>
+                                <?php
+                                    $puestos = PuestoData::getAll();
+                                    foreach ($puestos as $puesto) {
+                                        echo "<option value='{$puesto->id}'>{$puesto->nombre}</option>";
+
+                                    }
+
+
+                                ?>                  
+        </select>
     </div>
     <div class="form-group">
         <label for="editEmployeeDepartment">Departamento</label>
@@ -227,7 +240,7 @@ $encuestas = EncuestaData::getAll();
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form id="assignSurveyForm" method="POST" action="index.php?action=personal/process-survey"> <!-- Aquí va la acción a la que envías el formulario -->
+                            <form id="assignSurveyForm" method="POST" action=""> <!-- Aquí va la acción a la que envías el formulario -->
                                 <!-- Campo oculto para el ID del empleado -->
                                 <input type="hidden" id="employeeId" name="employeeId" value="">
                                 
@@ -373,7 +386,7 @@ function editPersonal(personalId) {
                 // Asignar los valores recibidos a los campos del formulario
                 $('#editEmployeeName').val(response.nombre);
                 $('#editEmployeeEmail').val(response.correo);
-                $('#editEmployeeRole').val(response.id_puesto);
+                $('#editEmployeeRole').val(response.id_puesto); // Selecciona el puesto por su ID
                 $('#editEmployeeDepartment').val(response.id_departamento);
                 $('#editEmployeeDate').val(response.fecha_alta);
                 $('#editEmployeePhone').val(response.telefono);
@@ -597,9 +610,26 @@ function sendWhatsapp(userId) {
         }
     });
 }
+function printPersonal() {
+    let department_filter = $('#department_filter').val();
+    let custom_search = $('#custom_search').val();
 
-
-
+    $.ajax({
+        url: "./?action=personal/print-personal",  // URL proporcionada
+        type: "POST",
+        data: {
+            department_filter: department_filter,
+            custom_search: custom_search
+        },
+        success: function(response) {
+            // Redirigir para descargar el PDF
+            window.location.href = "./?action=personal/print-personal&download=1&department_filter=" + department_filter + "&custom_search=" + custom_search;
+        },
+        error: function(xhr, status, error) {
+            console.error("Error al generar el PDF:", error);
+        }
+    });
+}
 
 
 

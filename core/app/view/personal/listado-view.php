@@ -74,6 +74,7 @@ $encuestas = EncuestaData::getAll();
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Departamento / Puesto</th>
+                    <th>Empresa</th>
                     <th>Usuario</th>
                     <th>Clave</th>
                     <th>Correo</th>
@@ -82,7 +83,7 @@ $encuestas = EncuestaData::getAll();
                 </tr>
             </thead>
             <tbody>
-                <!-- El cuerpo se gestionará dinámicamente por DataTables -->
+                <!-- El cuerpo se gestionará dinámicamente por DataTable -->
             </tbody>
         </table>
     </div>

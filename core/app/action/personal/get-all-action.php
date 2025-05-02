@@ -14,10 +14,11 @@ $columns = array(
     0 => 'id',
     1 => 'nombre',
     2 => 'id_departamento',
-    3 => 'usuario',
-    4 => 'clave',
-    5 => 'correo',
-    6 => 'telefono'
+    3 => 'empresa',
+    4 => 'usuario',
+    5 => 'clave',
+    6 => 'correo',
+    7 => 'telefono'
 );
 
 // Filtros personalizados
@@ -25,11 +26,13 @@ $department_filter = isset($requestData['department_filter']) ? $requestData['de
 $custom_search = isset($requestData['custom_search']) ? $requestData['custom_search'] : '';
 $custom_length = isset($requestData['length']) ? intval($requestData['length']) : 10;
 
-// Consulta inicial
+// Consulta inicial con INNER JOIN a empresas
 $sql = "SELECT personal.id, personal.nombre, personal.usuario, personal.clave, personal.correo, personal.telefono, 
-        departamentos.nombre AS departamento
+        departamentos.nombre AS departamento,
+        empresas.nombre AS empresa
         FROM personal
-        INNER JOIN departamentos ON personal.id_departamento = departamentos.idDepartamento";
+        INNER JOIN departamentos ON personal.id_departamento = departamentos.idDepartamento
+        INNER JOIN empresas ON personal.empresa_id = empresas.id";
 
 // Iniciar condición
 $where = [];
@@ -37,7 +40,7 @@ $where = [];
 // Filtro de búsqueda personalizado
 if (!empty($custom_search)) {
     $searchValue = mysqli_real_escape_string($conn, $custom_search);
-    $where[] = "(personal.nombre LIKE '%$searchValue%')";
+    $where[] = "(personal.nombre LIKE '%$searchValue%' OR empresas.nombre LIKE '%$searchValue%')";
 }
 
 // Aplicar el filtro por departamento
@@ -75,6 +78,7 @@ while ($row = mysqli_fetch_assoc($query)) {
     $nestedData[] = $row["id"];
     $nestedData[] = $row["nombre"];
     $nestedData[] = $row["departamento"];
+    $nestedData[] = $row["empresa"]; // Nueva columna empresa
     $nestedData[] = $row["usuario"];
     $nestedData[] = $row["clave"];
     $nestedData[] = $row["correo"];
@@ -94,7 +98,7 @@ while ($row = mysqli_fetch_assoc($query)) {
         }
 
         .table .dropdown {
-            position: relative; /* Cambiar a relative si quieres que se posicione dentro de la celda */
+            position: relative;
             text-align: center;
         }
 
@@ -102,13 +106,13 @@ while ($row = mysqli_fetch_assoc($query)) {
             position: absolute;
             z-index: 10000;
             display: none;
-            width: 250px; /* Cambia este valor para ajustar el tamaño del menú */
+            width: 250px;
             background-color: white;
             border-radius: 4px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             overflow: hidden;
             left: auto;
-            right: 0; /* Esto hará que el menú se despliegue hacia la izquierda */
+            right: 0;
         }
 
         .dropdown-toggle {
@@ -130,13 +134,12 @@ while ($row = mysqli_fetch_assoc($query)) {
             <li><a class="dropdown-item" href="#" onclick="editPersonal(' . $row["id"] . ')">Editar</a></li>
             <li><a class="dropdown-item" href="#" onclick="deletePersonal(' . $row["id"] . ',`' . $row["nombre"] . '`)">Eliminar</a></li>
             <li><a class="dropdown-item" href="#" onclick="openAssignSurveyModal(' . $row["id"] . ')">Asignar Encuesta</a></li>
-
             <hr></hr>
-                        <li><a class="dropdown-item" href="#" onclick="sendMail(' . $row["id"] . ')">Enviar credenciales por correo</a></li>
-                        <li><a class="dropdown-item" href="#" onclick="sendWhatsapp(' . $row["id"] . ')">Enviar credenciales por Whatsapp</a></li>
+            <li><a class="dropdown-item" href="#" onclick="sendMail(' . $row["id"] . ')">Enviar credenciales por correo</a></li>
+            <li><a class="dropdown-item" href="#" onclick="sendWhatsapp(' . $row["id"] . ')">Enviar credenciales por Whatsapp</a></li>
         </ul>
     </div>
-';
+    ';
 
     $nestedData[] = $buttons;
     $data[] = $nestedData;
