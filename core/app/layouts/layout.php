@@ -191,6 +191,8 @@ if (isset($_SESSION['typeUser']) && $_SESSION['typeUser'] === 'e') {
                 <a href="#"><i class="fa-solid fa-timeline"></i>  <span>Reportes</span> <i class="fa fa-angle-left pull-right"></i></a>
                 <ul class="treeview-menu">  
                 <li><a href="./?view=reportes/index">Reportes por empleado</a></li>
+                <li><a href="./?view=resultados/get-all-results">Resumen general</a></li>
+                <li><a href="./?view=resultados/general-results">Reportes por generales</a></li>
                   <li><a href="./?view=resultados/category-results">Reportes por categoria</a></li>
                   <li><a href="./?view=resultados/domain-results">Reportes por dominio</a></li>
 

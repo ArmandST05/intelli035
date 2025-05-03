@@ -51,5 +51,31 @@ public static function getAnswersByEmployeeAndSurvey($personal_id, $survey_id) {
             return $respuestas;
         }
     
-    
+        public static function getEmployeesCompletedSurvey2And3() {
+            $sql = "
+                SELECT p.id AS personal_id, CONCAT(p.name, ' ', p.lastname) AS personal_name
+                FROM personal p
+                INNER JOIN personal_surveys ps ON ps.personal_id = p.id
+                WHERE ps.completed = 1 AND ps.survey_id IN (2, 3)
+                GROUP BY p.id
+                HAVING COUNT(DISTINCT ps.survey_id) = 2
+                ORDER BY personal_name ASC
+            ";
+        
+            $result = Executor::doit($sql);
+        
+            $empleados = [];
+            if ($result && $result[0] instanceof mysqli_result) {
+                while ($row = $result[0]->fetch_assoc()) {
+                    $empleados[] = [
+                        'personal_id' => $row['personal_id'],
+                        'personal_name' => $row['personal_name']
+                    ];
+                }
+            }
+        
+            return $empleados;
+        }
+        
+        
 }
