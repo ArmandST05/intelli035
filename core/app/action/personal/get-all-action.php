@@ -2,14 +2,14 @@
 $conn = Database::getCon();
 $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : null;
 
-// Verificar el tipo de usuario y obtener el ID del médico o administrador
+// Verificar el tipo de usuario
 $user = UserData::getLoggedIn();
 $user_type = $user->user_type;
 
 // DataTables request
 $requestData = $_REQUEST;
 
-// Declaración de columnas
+// Columnas
 $columns = array(
     0 => 'id',
     1 => 'nombre',
@@ -23,10 +23,11 @@ $columns = array(
 
 // Filtros personalizados
 $department_filter = isset($requestData['department_filter']) ? $requestData['department_filter'] : '';
+$company_filter = isset($requestData['company_filter']) ? $requestData['company_filter'] : ''; // Nuevo filtro
 $custom_search = isset($requestData['custom_search']) ? $requestData['custom_search'] : '';
 $custom_length = isset($requestData['length']) ? intval($requestData['length']) : 10;
 
-// Consulta inicial con INNER JOIN a empresas
+// Consulta base
 $sql = "SELECT personal.id, personal.nombre, personal.usuario, personal.clave, personal.correo, personal.telefono, 
         departamentos.nombre AS departamento,
         empresas.nombre AS empresa
@@ -34,18 +35,22 @@ $sql = "SELECT personal.id, personal.nombre, personal.usuario, personal.clave, p
         INNER JOIN departamentos ON personal.id_departamento = departamentos.idDepartamento
         INNER JOIN empresas ON personal.empresa_id = empresas.id";
 
-// Iniciar condición
 $where = [];
 
-// Filtro de búsqueda personalizado
+// Filtro de búsqueda general
 if (!empty($custom_search)) {
     $searchValue = mysqli_real_escape_string($conn, $custom_search);
     $where[] = "(personal.nombre LIKE '%$searchValue%' OR empresas.nombre LIKE '%$searchValue%')";
 }
 
-// Aplicar el filtro por departamento
+// Filtro por departamento
 if (!empty($department_filter)) {
     $where[] = "personal.id_departamento = " . mysqli_real_escape_string($conn, $department_filter);
+}
+
+// 🔸 Filtro por empresa
+if (!empty($company_filter)) {
+    $where[] = "personal.empresa_id = " . mysqli_real_escape_string($conn, $company_filter);
 }
 
 // Agregar condiciones al SQL
@@ -53,32 +58,29 @@ if (count($where) > 0) {
     $sql .= " WHERE " . implode(" AND ", $where);
 }
 
-// Total de registros filtrados
+// Total filtrado
 $query = mysqli_query($conn, $sql);
 $totalFiltered = mysqli_num_rows($query);
 
-// Orden y límite
+// Ordenamiento y paginación
 $orderColumn = isset($requestData['order'][0]['column']) ? $columns[$requestData['order'][0]['column']] : 'id';
 $orderDirection = isset($requestData['order'][0]['dir']) ? $requestData['order'][0]['dir'] : 'ASC';
 $start = isset($requestData['start']) ? intval($requestData['start']) : 0;
 
-// Aplicar orden y límite
 $sql .= " ORDER BY $orderColumn $orderDirection LIMIT $start, $custom_length";
 
-// Depuración
-error_log($sql);
+// error_log($sql); // opcional para debug
 
-// Ejecución de la consulta con paginación
 $query = mysqli_query($conn, $sql);
 
-// Construcción de la respuesta JSON
+// Construcción de respuesta
 $data = array();
 while ($row = mysqli_fetch_assoc($query)) {
     $nestedData = array();
     $nestedData[] = $row["id"];
     $nestedData[] = $row["nombre"];
     $nestedData[] = $row["departamento"];
-    $nestedData[] = $row["empresa"]; // Nueva columna empresa
+    $nestedData[] = $row["empresa"];
     $nestedData[] = $row["usuario"];
     $nestedData[] = $row["clave"];
     $nestedData[] = $row["correo"];
@@ -96,12 +98,7 @@ while ($row = mysqli_fetch_assoc($query)) {
             text-align: center;
             line-height: 18px;
         }
-
-        .table .dropdown {
-            position: relative;
-            text-align: center;
-        }
-
+        .table .dropdown { position: relative; text-align: center; }
         .dropdown-menu {
             position: absolute;
             z-index: 10000;
@@ -114,27 +111,18 @@ while ($row = mysqli_fetch_assoc($query)) {
             left: auto;
             right: 0;
         }
-
-        .dropdown-toggle {
-            background-color: transparent;
-            border: none;
-        }
-
-        td, th {
-            height: 60px;
-            border: 1px solid grey;
-        }
+        .dropdown-toggle { background-color: transparent; border: none; }
+        td, th { height: 60px; border: 1px solid grey; }
     </style>
     <div class="dropdown">
         <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton' . $row["id"] . '">
             <i class="fa-solid fa-ellipsis" style="color: black;"></i>
         </button>
-
         <ul class="dropdown-menu" id="dropdownMenu' . $row["id"] . '" style="display: none; position: absolute;">
             <li><a class="dropdown-item" href="#" onclick="editPersonal(' . $row["id"] . ')">Editar</a></li>
             <li><a class="dropdown-item" href="#" onclick="deletePersonal(' . $row["id"] . ',`' . $row["nombre"] . '`)">Eliminar</a></li>
             <li><a class="dropdown-item" href="#" onclick="openAssignSurveyModal(' . $row["id"] . ')">Asignar Encuesta</a></li>
-            <hr></hr>
+            <hr>
             <li><a class="dropdown-item" href="#" onclick="sendMail(' . $row["id"] . ')">Enviar credenciales por correo</a></li>
             <li><a class="dropdown-item" href="#" onclick="sendWhatsapp(' . $row["id"] . ')">Enviar credenciales por Whatsapp</a></li>
         </ul>

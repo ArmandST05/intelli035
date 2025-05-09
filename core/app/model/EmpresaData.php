@@ -71,7 +71,11 @@ class EmpresaData {
         $query = Executor::doit($sql);
         return Model::one($query[0], new EmpresaData());
     }
-
+    public static function getTodo(){
+        $sql = "SELECT * FROM ".self::$tablename;
+        $query = Executor::doit($sql);
+        return Model::many($query[0], new EmpresaData());
+    }
     public static function getAll() {
         $sql = "SELECT empresas.*, cantidad_empleados.descripcion AS cantidad_descripcion, empresas.logo 
                 FROM empresas 
