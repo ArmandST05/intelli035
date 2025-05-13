@@ -49,12 +49,19 @@ class PeriodoData {
         $query = Executor::doit($sql);
         return Model::many($query[0], new PeriodoData());
     }
-
+public static function getAllWithEmpresa(){
+    $sql = "SELECT periods.*, empresas.nombre AS empresa_nombre 
+            FROM periods 
+            INNER JOIN empresas ON periods.empresa_id = empresas.id";
+    $query = Executor::doit($sql);
+    return Model::many($query[0], new PeriodoData());
+}
     // Eliminar un periodo por ID
     public static function delete($idPeriodo) {
         $sql = "DELETE FROM periods WHERE id = $idPeriodo";
         Executor::doit($sql);
     }
     
+
 
 }  

@@ -1,6 +1,8 @@
 <?php
 
-$periodos = PeriodoData::getAll(); 
+$periodos = PeriodoData::getAllWithEmpresa();
+$empresas = EmpresaData::getAll(); // <-- Asegúrate de tener esta función
+
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -64,13 +66,30 @@ $periodos = PeriodoData::getAll();
     }
 </style>
 <body>
- <!-- Botón para abrir el modal -->
-<button type="button" class="btn btn-primary" onclick="openModalNuevoPeriodo()">Nuevo Periodo</button>
+ <!-- Botón para abrir el modal -->            <!-- Filtro por empresa -->
+<div class="row mb-3 align-items-end">
+    <!-- Empresa -->
+    <div class="col-md-6">
+        <label for="filter-company">Empresa:</label>
+        <select id="filter-company" class="form-control">
+            <option value="">Todas</option>
+            <?php foreach($empresas as $empresa): ?>
+                <option value="<?php echo $empresa->id; ?>"><?php echo $empresa->nombre; ?></option>
+            <?php endforeach; ?>
+        </select>
+    </div>
+<br>
+    <!-- Botón al lado del select -->
+    <div class="col-md-6 d-flex align-items-end">
+        <button type="button" class="btn btn-primary" onclick="openModalNuevoPeriodo()">Nuevo Periodo</button>
+    </div>
+</div>
+<br><br>
 
 <table class="table table-bordered">
     <thead>
         <tr>
-            <th>ID</th>
+            
             <th>Nombre del Periodo</th>
             <th>Fecha de Inicio</th>
             <th>Fecha de Fin</th>
@@ -79,39 +98,30 @@ $periodos = PeriodoData::getAll();
             <th>Acciones</th>
         </tr>
     </thead>
-    <tbody>
-        <?php foreach ($periodos as $periodo): ?>
-            <tr>
-                <td><?php echo htmlspecialchars($periodo->id); ?></td>
-                <td><?php echo htmlspecialchars($periodo->name); ?></td>
-                <td><?php echo htmlspecialchars($periodo->start_date); ?></td>
-                <td><?php echo htmlspecialchars($periodo->end_date); ?></td>
-                <td><?php echo htmlspecialchars($periodo->empresa_id); ?></td>
-                <td><?php echo htmlspecialchars($periodo->status); ?></td>
-                <!-- Aquí, dentro de la tabla, agregamos el botón de editar -->
-                <td>
-                    <div class="dropdown">
-                        <button class="dropdown-toggle">
-                            <span class="dots">...</span>
-                        </button>
-                        <div class="dropdown-menu">
-                            <a href="javascript:void(0)" onclick="editPeriod(<?php echo $periodo->id; ?>)" class="dropdown-item">
-                                Editar
-                            </a>
-                            <a href="javascript:void(0)" onclick="deletePeriod(<?php echo $periodo->id; ?>, '<?php echo $periodo->name; ?>', event)" class="dropdown-item">
-                                Eliminar
-                            </a>
-
-                            <a href="javascript:void(0)" onclick="openModalAssign(<?php echo $periodo->id; ?>, <?php echo $periodo->empresa_id; ?>)" class="dropdown-item">
-                                Asignar empresa
-                            </a>
-
-                        </div>
+   <tbody>
+    <?php foreach ($periodos as $periodo): ?>
+        <tr data-empresa-id="<?php echo $periodo->empresa_id; ?>">
+            <td><?php echo htmlspecialchars($periodo->name); ?></td>
+            <td><?php echo htmlspecialchars($periodo->start_date); ?></td>
+            <td><?php echo htmlspecialchars($periodo->end_date); ?></td>
+            <td><?php echo htmlspecialchars($periodo->empresa_nombre); ?></td>
+            <td><?php echo htmlspecialchars($periodo->status); ?></td>
+            <td>
+                <div class="dropdown">
+                    <button class="dropdown-toggle">
+                        <span class="dots">...</span>
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="javascript:void(0)" onclick="editPeriod(<?php echo $periodo->id; ?>)" class="dropdown-item">Editar</a>
+                        <a href="javascript:void(0)" onclick="deletePeriod(<?php echo $periodo->id; ?>, '<?php echo $periodo->name; ?>', event)" class="dropdown-item">Eliminar</a>
+                        <a href="javascript:void(0)" onclick="openModalAssign(<?php echo $periodo->id; ?>, <?php echo $periodo->empresa_id; ?>)" class="dropdown-item">Asignar empresa</a>
                     </div>
-                </td>
-            </tr>
-        <?php endforeach; ?>
-    </tbody>
+                </div>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</tbody>
+
 </table>
 
 
@@ -255,6 +265,19 @@ $periodos = PeriodoData::getAll();
 </div>
 
 <script>
+    document.getElementById('filter-company').addEventListener('change', function () {
+    var selectedEmpresaId = this.value;
+    var rows = document.querySelectorAll('tbody tr');
+
+    rows.forEach(function (row) {
+        var empresaId = row.getAttribute('data-empresa-id');
+        if (selectedEmpresaId === "" || empresaId === selectedEmpresaId) {
+            row.style.display = '';
+        } else {
+            row.style.display = 'none';
+        }
+    });
+});
 
 
   // Función para manejar la apertura del menú

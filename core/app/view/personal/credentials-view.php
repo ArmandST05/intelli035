@@ -1,161 +1,184 @@
 <?php 
 $departamentos = DepartamentoData::getAll();
+$empresas      = EmpresaData::getAll();
 ?>
-<div class="card" style="width: 100%; margin-top: 20px">
-    <div class="card-body">
-        <div class="row mb-3">
-            <!-- Filtro por departamento -->
-            <div class="col-md-4">
-                <label for="filter-department">Departamento:</label>
-                <select id="filter-department" class="form-control">
-                    <option value="">Todos</option>
-                    <!-- Opciones cargadas dinámicamente por AJAX -->
-                </select>
-            </div>
-
-            <!-- Búsqueda personalizada -->
-            <div class="col-md-4">
-                <label for="custom-search">Buscar:</label>
-                <input type="text" id="custom-search" class="form-control" placeholder="Buscar...">
-            </div>
-
-            <!-- Selector de cantidad de registros -->
-            <div class="col-md-4">
-                <label for="custom-length">Registros por página:</label>
-                <select id="custom-length" class="form-control">
-                    <option value="10">10</option>
-                    <option value="25">25</option>
-                    <option value="50">50</option>
-                    <option value="100">100</option>
-                </select>
-            </div>
-        </div>
-    <br>
-    <button type="button" class="btn btn-primary" id="btncorreo" onclick="sendMail()">Enviar credenciales por correo</button>
-    <button type="button" class="btn btn-primary" id="btnWhatsapp">Enviar credenciales por Whatsapp</button>
-
-    <br>
-        <!-- Tabla para mostrar los resultados -->
-        <table id="lookup" class="table table-striped table-hover">
-            <thead style="background-color: #484848; color: white; border-radius: 5px;">
-                <tr>
-                <th><input type="checkbox" id="select-all"></th> <!-- Checkbox para seleccionar todos -->
-                <th>#</th>
-                <th>Nombre</th>
-                <th>Departamento / Puesto</th>
-                <th>Usuario</th>
-                <th>Clave</th>
-                <th>Correo</th>
-                <th>Teléfono</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!-- Gestionado dinámicamente por DataTables -->
-            </tbody>
-        </table>
+<div class="card" style="width:100%; margin-top:20px">
+  <div class="card-body">
+    <div class="row mb-3">
+      <!-- Filtro por departamento -->
+      <div class="col-md-4">
+        <label for="filter-department">Departamento:</label>
+        <select id="filter-department" class="form-control">
+          <option value="">Todos</option>
+        </select>
+      </div>
+      <!-- Búsqueda personalizada -->
+      <div class="col-md-4">
+        <label for="custom-search">Buscar:</label>
+        <input type="text" id="custom-search" class="form-control" placeholder="Buscar...">
+      </div>
+      <!-- Filtro por empresa -->
+      <div class="col-md-4">
+        <label for="filter-company">Empresa:</label>
+        <select id="filter-company" class="form-control">
+          <option value="">Todas</option>
+          <?php foreach($empresas as $empresa): ?>
+            <option value="<?= $empresa->id ?>"><?= htmlspecialchars($empresa->nombre) ?></option>
+          <?php endforeach; ?>
+        </select>
+      </div>
+      <!-- Selector de cantidad de registros -->
+      <div class="col-md-4 mt-3">
+        <label for="custom-length">Registros por página:</label>
+        <select id="custom-length" class="form-control">
+          <option value="10">10</option>
+          <option value="25">25</option>
+          <option value="50">50</option>
+          <option value="100">100</option>
+        </select>
+      </div>
     </div>
+
+    <button class="btn btn-primary" onclick="sendMail()">Enviar credenciales por correo</button>
+    <button class="btn btn-primary">Enviar credenciales por Whatsapp</button>
+
+    <br><br>
+
+    <table id="lookup" class="table table-striped table-hover">
+      <thead style="background:#484848; color:#fff;">
+        <tr>
+          <th><input type="checkbox" id="select-all"></th>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Departamento / Puesto</th>
+          <th>Usuario</th>
+          <th>Clave</th>
+          <th>Correo</th>
+          <th>Teléfono</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 </div>
 
 <script>
-$(document).ready(function() {
+  // Hacemos dataTable global para usarlo en filtros
+  var dataTable;
+
+  $(document).ready(function() {
+    // Cargar departamentos
+    $.getJSON('./?action=departamentos/get-all', function(depts) {
+      depts.forEach(function(d){
+        $('#filter-department')
+          .append('<option value="'+d.id+'">'+d.nombre+'</option>');
+      });
+    });
+
     // Inicializar DataTable
-    var dataTable = $('#lookup').DataTable({
-        "language": {
-            "sProcessing": "Procesando...",
-            "sZeroRecords": "No se encontraron resultados",
-            "sEmptyTable": "Ningún dato disponible en esta tabla",
-            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sLoadingRecords": "Cargando...",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            }
-        },
-        "ordering": false,
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            url: "./?action=personal/get-all-credentials", // Endpoint del backend
-            type: "POST",
-            data: function(d) {
-                // Añadir filtros dinámicos
-                d.department_filter = $('#filter-department').val(); // Filtro por departamento
-                d.custom_search = $('#custom-search').val(); // Búsqueda personalizada
-                d.length = $('#custom-length').val(); // Tamaño de paginación
-            },
-            dataSrc: function(json) {
-                if (json.data) {
-                    return json.data; // DataTables espera un array en 'data'
-                } else {
-                    console.error("Respuesta inválida del servidor: ", json);
-                    return [];
-                }
-            },
-            error: function(xhr, error, code) {
-                console.error("Error al cargar datos: ", error, code);
-            }
-        },
-        "responsive": true,
-        "scrollX": true,
-        "dom": '<"datatable-content"t><"datatable-footer"ip>', // Diseño de tabla
-    });
-
-    // Cargar opciones de departamentos dinámicamente
-    $.ajax({
-        url: './?action=departamentos/get-all', // Endpoint para obtener departamentos
-        method: 'GET',
-        success: function(data) {
-            var departmentSelect = $('#filter-department');
-            data.forEach(function(department) {
-                departmentSelect.append('<option value="' + department.id + '">' + department.nombre + '</option>');
-            });
-        },
-        error: function(xhr, error, code) {
-            console.error("Error al cargar departamentos: ", error, code);
+    dataTable = $('#lookup').DataTable({
+      language: {
+        sProcessing:   "Procesando...",
+        sZeroRecords:  "No se encontraron resultados",
+        sEmptyTable:   "Ningún dato disponible en esta tabla",
+        sInfo:         "Mostrando _START_ a _END_ de _TOTAL_ registros",
+        sInfoFiltered: "(filtrado de _MAX_ registros totales)",
+        sLoadingRecords: "Cargando...",
+        oPaginate: {
+          sFirst:    "Primero",
+          sLast:     "Último",
+          sNext:     "Siguiente",
+          sPrevious: "Anterior"
         }
-    });
-});
-function sendMail() {
-    var selectedUsers = [];
-    $('#lookup tbody input[type="checkbox"]:checked').each(function() {
-        var rowData = dataTable.row($(this).closest('tr')).data();
-        selectedUsers.push({
-            name: rowData[1], // Nombre
-            department: rowData[2], // Departamento / Puesto
-            username: rowData[3], // Usuario
-            password: rowData[4], // Clave
-            email: rowData[5], // Correo
-            phone: rowData[6], // Teléfono
-        });
+      },
+      processing: true,
+      serverSide: true,
+      ordering:   false,
+      responsive: true,
+      scrollX:    true,
+      dom:        '<"datatable-content"t><"datatable-footer"ip>',
+
+      ajax: {
+        url: './?action=personal/get-all-notifications',
+        type: 'POST',
+        data: function(d) {
+          d.department_filter = $('#filter-department').val();
+          d.company_filter    = $('#filter-company').val();
+          d.custom_search     = $('#custom-search').val();
+          d.length            = $('#custom-length').val();
+        }
+      },
+
+      columns: [
+        { // checkbox
+          data: 0,
+          orderable: false,
+          render: function(id) {
+            return '<input type="checkbox" class="row-select" value="'+id+'">';
+          }
+        },
+        { data: 1 }, // id
+        { data: 2 }, // nombre
+        { data: 3 }, // departamento
+        { data: 4 }, // usuario
+        { data: 5 }, // clave
+        { data: 6 }, // correo
+        { data: 7 }  // teléfono
+      ]
     });
 
-    if (selectedUsers.length === 0) {
-        alert('No hay usuarios seleccionados.');
-        return;
+    // “Select all” checkbox
+    $('#select-all').on('change', function(){
+      var checked = $(this).prop('checked');
+      $('.row-select').prop('checked', checked);
+    });
+
+    // Resetear select-all tras cada draw
+    dataTable.on('draw', function(){
+      $('#select-all').prop('checked', false);
+    });
+  });
+
+  // Recargar DataTable cuando cambian los filtros
+  $('#filter-department, #filter-company, #custom-search, #custom-length')
+    .on('change keyup', function(){
+      dataTable.ajax.reload();
+    });
+
+  // Función de envío masivo
+  function sendMail() {
+    var users = [];
+    $('#lookup tbody input.row-select:checked').each(function(){
+      var row = dataTable.row($(this).closest('tr')).data();
+      users.push({
+        id:       row[1],
+        name:     row[2],
+        department: row[3],
+        username: row[4],
+        password: row[5],
+        email:    row[6],
+        phone:    row[7]
+      });
+    });
+
+    if (!users.length) {
+      return alert('No hay usuarios seleccionados.');
     }
 
     $.ajax({
-        url: './?action=notifications/send-massive-mail',
-        method: 'POST',
-        contentType: 'application/json',
-        data: JSON.stringify({ users: selectedUsers }),
-        success: function(response) {
-            var res = JSON.parse(response);
-            if (res.success) {
-                alert('Correos enviados exitosamente.');
-            } else {
-                alert('Ocurrieron errores al enviar algunos correos:\n' + res.errors.join('\n'));
-            }
-        },
-        error: function(xhr, error, code) {
-            console.error('Error al enviar correos:', error, code);
-            alert('Ocurrió un error al intentar enviar los correos.');
-        }
+      url: './?action=notifications/send-massive-mail',
+      method: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({ users: users }),
+      success: function(resp) {
+        var res = JSON.parse(resp);
+        alert(res.success 
+              ? 'Correos enviados exitosamente.' 
+              : 'Errores al enviar:\n' + res.errors.join('\n'));
+      },
+      error: function() {
+        alert('Error en la petición. Intenta de nuevo.');
+      }
     });
-}
-
-
+  }
 </script>

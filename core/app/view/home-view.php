@@ -2,7 +2,7 @@
 
 $departamentos = DepartamentoData::getAll();
 $encuestas = EncuestaData::getAll();
-
+$empresas = EmpresaData::getAll();
 
 ?>
 
@@ -34,17 +34,31 @@ $encuestas = EncuestaData::getAll();
 </div>
 <div class="row mb-4">
     <!-- Filtro por Departamento -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="filter-department">Filtrar por Departamento:</label>
-        <select id="filter-department" class="form-control custom-select-width">
-            <option value="">Todos los departamentos</option> <!-- Opción por defecto -->
-        </select>
-
+            <select id="filter-department" class="form-control custom-select-width">
+                <option value="">Todos los departamentos</option>
+            </select>
         </div>
     </div>
+
+    <!-- Filtro por Empresa -->
+    <div class="col-md-3">
+        <div class="form-group">
+            <label for="filter-company">Filtrar por Empresa:</label>
+            <select id="filter-company" class="form-control custom-select-width">
+                <?php foreach ($empresas as $empresa): ?>
+                    <option value="<?php echo $empresa->id; ?>">
+                        <?php echo htmlspecialchars($empresa->nombre); ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+        </div>
+    </div>
+
     <!-- Campo de Búsqueda -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="custom-search">Buscar:</label>
             <input type="text" id="custom-search" class="form-control" placeholder="Escribe para buscar...">
@@ -52,7 +66,7 @@ $encuestas = EncuestaData::getAll();
     </div>
 
     <!-- Selección de Cantidad de Resultados -->
-    <div class="col-md-4">
+    <div class="col-md-3">
         <div class="form-group">
             <label for="custom-length">Mostrar registros:</label>
             <select id="custom-length" class="form-control">
@@ -64,6 +78,7 @@ $encuestas = EncuestaData::getAll();
         </div>
     </div>
 </div>
+
 
 
     <div class="card" style="width: 100%;  margin-top: 20px">
@@ -296,70 +311,100 @@ $encuestas = EncuestaData::getAll();
     });
 });
 $(document).ready(function() {
-    
-    var dataTable = $('#lookup').DataTable({
-        "language": {
-            "sProcessing": "Procesando...",
-            "sZeroRecords": "No se encontraron resultados",
-            "sEmptyTable": "Ningún dato disponible en esta tabla",
-            "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-            "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-            "sLoadingRecords": "Cargando...",
-            "oPaginate": {
-                "sFirst": "Primero",
-                "sLast": "Último",
-                "sNext": "Siguiente",
-                "sPrevious": "Anterior"
-            }
-        },
-        "ordering": false,
-        "processing": true,
-        "serverSide": true,
-        "ajax": {
-            url: "./?action=personal/get-all",
-            type: "POST",
-            data: function(d) {
-                d.department_filter = $('#filter-department').val();
-                d.custom_search = $('#custom-search').val();
-                d.length = $('#custom-length').val();
-            },
-            dataSrc: function(json) {
-                return json.data;  // Asegúrate de que data es lo que DataTable espera
-            },
-            error: function(xhr, error, code) {
-            }
-        },
-        "responsive": true,
-        "scrollX": true,
-        "dom": '<"datatable-content"t><"datatable-footer"ip>', // Coloca la paginación e información en la parte inferior
-    });
 
-    $.ajax({
-    url: './?action=departamentos/get-all', // Endpoint para obtener todos los departamentos
+// Inicializar DataTable
+var dataTable = $('#lookup').DataTable({
+    "language": {
+        "sProcessing": "Procesando...",
+        "sZeroRecords": "No se encontraron resultados",
+        "sEmptyTable": "Ningún dato disponible en esta tabla",
+        "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+        "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+        "sLoadingRecords": "Cargando...",
+        "oPaginate": {
+            "sFirst": "Primero",
+            "sLast": "Último",
+            "sNext": "Siguiente",
+            "sPrevious": "Anterior"
+        }
+    },
+    "ordering": false,
+    "processing": true,
+    "serverSide": true,
+    "ajax": {
+        url: "./?action=personal/get-all",
+        type: "POST",
+        data: function(d) {
+            // Filtros de departamento y empresa, y búsqueda personalizada
+            d.department_filter = $('#filter-department').val();
+            d.company_filter = $('#filter-company').val(); 
+            d.custom_search = $('#custom-search').val();
+            d.length = $('#custom-length').val();
+        },
+        dataSrc: function(json) {
+            return json.data; // Se espera que "data" sea el arreglo de registros a mostrar
+        },
+        error: function(xhr, error, code) {
+            console.error("Error en AJAX:", code);
+        }
+    },
+    "responsive": true,
+    "scrollX": true,
+    "dom": '<"datatable-content"t><"datatable-footer"ip>', // Coloca la paginación al final
+});
+
+// Cargar empresas al iniciar
+$.ajax({
+    url: './?action=empresas/get-all', // Asegúrate de que esta ruta sea correcta
     method: 'GET',
     success: function(data) {
-        var departmentSelect = $('#filter-department');
-        data.forEach(function(department) {
-            departmentSelect.append('<option value="' + department.id + '">' + department.nombre + '</option>');
+        var companySelect = $('#filter-company');
+        companySelect.append('<option value="">Todas las empresas</option>'); // Opción por defecto
+        data.forEach(function(empresa) {
+            companySelect.append('<option value="' + empresa.id + '">' + empresa.nombre + '</option>');
         });
+    },
+    error: function(xhr, status, error) {
+        console.error("Error al cargar empresas:", error);
     }
 });
 
-    // Recargar DataTable al cambiar el filtro
-    $('#filter-department').change(function() {
-        dataTable.ajax.reload();
-    });
-
-    // Funcionalidad para la búsqueda
-    $('#custom-search').on('keyup', function () {
-        dataTable.ajax.reload();
-    });
-
-    // Funcionalidad para la selección de longitud
-    $('#custom-length').change(function() {
-        dataTable.ajax.reload();
-    });
+// Cargar departamentos al iniciar
+$.ajax({
+    url: './?action=departamentos/get-all',
+    method: 'GET',
+    success: function(data) {
+        var departmentSelect = $('#filter-department');
+        departmentSelect.append('<option value="">Todos los departamentos</option>'); // Opción por defecto
+        data.forEach(function(department) {
+            departmentSelect.append('<option value="' + department.id + '">' + department.nombre + '</option>');
+        });
+    },
+    error: function(xhr, status, error) {
+        console.error("Error al cargar departamentos:", error);
+    }
 });
+
+// Recargar tabla al cambiar los filtros
+$('#filter-company').change(function() {
+    dataTable.ajax.reload();
+});
+
+$('#filter-department').change(function() {
+    dataTable.ajax.reload();
+});
+
+// Funcionalidad de búsqueda
+$('#custom-search').on('keyup', function () {
+    dataTable.ajax.reload();
+});
+
+// Funcionalidad para la selección de longitud
+$('#custom-length').change(function() {
+    dataTable.ajax.reload();
+});
+});
+
 
 
 function editPersonal(personalId) {
