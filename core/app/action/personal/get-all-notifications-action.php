@@ -2,145 +2,168 @@
 $conn = Database::getCon();
 $user_id = isset($_SESSION["user_id"]) ? $_SESSION["user_id"] : null;
 
-// Verificar el tipo de usuario
+// Obtener tipo de usuario (no usado aquí, pero lo dejas)
 $user = UserData::getLoggedIn();
-$user_type = $user->user_type;
+$user_type = $user->user_type ?? null;
 
 // DataTables request
 $requestData = $_REQUEST;
 
-// Columnas
-$columns = array(
-    0 => 'id',
-    1 => 'nombre',
-    2 => 'id_departamento',
-    3 => 'empresa',
-    4 => 'usuario',
-    5 => 'clave',
-    6 => 'correo',
-    7 => 'telefono'
-);
+// Columnas - deben coincidir con los campos que envías al frontend
+$columns = [
+    0 => 'personal.id',
+    1 => 'personal.nombre',
+    2 => 'departamentos.nombre',
+    3 => 'empresas.nombre',
+    4 => 'personal.usuario',
+    5 => 'personal.clave',
+    6 => 'personal.correo',
+    7 => 'personal.telefono'
+];
 
 // Filtros personalizados
-$department_filter = isset($requestData['department_filter']) ? $requestData['department_filter'] : '';
-$company_filter = isset($requestData['company_filter']) ? $requestData['company_filter'] : ''; // Nuevo filtro
-$custom_search = isset($requestData['custom_search']) ? $requestData['custom_search'] : '';
+$department_filter = $requestData['department_filter'] ?? '';
+$company_filter = $requestData['company_filter'] ?? '';
+$custom_search = $requestData['custom_search'] ?? '';
 $custom_length = isset($requestData['length']) ? intval($requestData['length']) : 10;
-
-// Consulta base
-$sql = "SELECT personal.id, personal.nombre, personal.usuario, personal.clave, personal.correo, personal.telefono, 
-        departamentos.nombre AS departamento,
-        empresas.nombre AS empresa
-        FROM personal
-        INNER JOIN departamentos ON personal.id_departamento = departamentos.idDepartamento
-        INNER JOIN empresas ON personal.empresa_id = empresas.id";
-
-$where = [];
-
-// Filtro de búsqueda general
-if (!empty($custom_search)) {
-    $searchValue = mysqli_real_escape_string($conn, $custom_search);
-    $where[] = "(personal.nombre LIKE '%$searchValue%' OR empresas.nombre LIKE '%$searchValue%')";
-}
-
-// Filtro por departamento
-if (!empty($department_filter)) {
-    $where[] = "personal.id_departamento = " . mysqli_real_escape_string($conn, $department_filter);
-}
-
-// 🔸 Filtro por empresa
-if (!empty($company_filter)) {
-    $where[] = "personal.empresa_id = " . mysqli_real_escape_string($conn, $company_filter);
-}
-
-// Agregar condiciones al SQL
-if (count($where) > 0) {
-    $sql .= " WHERE " . implode(" AND ", $where);
-}
-
-// Total filtrado
-$query = mysqli_query($conn, $sql);
-$totalFiltered = mysqli_num_rows($query);
-
-// Ordenamiento y paginación
-$orderColumn = isset($requestData['order'][0]['column']) ? $columns[$requestData['order'][0]['column']] : 'id';
-$orderDirection = isset($requestData['order'][0]['dir']) ? $requestData['order'][0]['dir'] : 'ASC';
 $start = isset($requestData['start']) ? intval($requestData['start']) : 0;
 
-$sql .= " ORDER BY $orderColumn $orderDirection LIMIT $start, $custom_length";
+// --- Construcción base de la consulta con parámetros ---
+$sqlBase = "
+    FROM personal
+    INNER JOIN departamentos ON personal.id_departamento = departamentos.idDepartamento
+    INNER JOIN empresas ON personal.empresa_id = empresas.id
+";
 
-// error_log($sql); // opcional para debug
+// Array para parámetros y tipos para sentencia preparada
+$whereClauses = [];
+$params = [];
+$paramTypes = "";
 
-$query = mysqli_query($conn, $sql);
+// Búsqueda general
+if (!empty($custom_search)) {
+    $whereClauses[] = "(personal.nombre LIKE ? OR empresas.nombre LIKE ?)";
+    $likeSearch = "%{$custom_search}%";
+    $params[] = $likeSearch;
+    $params[] = $likeSearch;
+    $paramTypes .= "ss";
+}
 
-// Construcción de respuesta
-$data = array();
-while ($row = mysqli_fetch_assoc($query)) {
-    $nestedData = array();
+// Filtro departamento numérico
+if (!empty($department_filter) && is_numeric($department_filter)) {
+    $whereClauses[] = "personal.id_departamento = ?";
+    $params[] = intval($department_filter);
+    $paramTypes .= "i";
+}
+
+// Filtro empresa numérico
+if (!empty($company_filter) && is_numeric($company_filter)) {
+    $whereClauses[] = "personal.empresa_id = ?";
+    $params[] = intval($company_filter);
+    $paramTypes .= "i";
+}
+
+// Construir WHERE si hay filtros
+$whereSql = "";
+if (count($whereClauses) > 0) {
+    $whereSql = " WHERE " . implode(" AND ", $whereClauses);
+}
+
+// --- Conteo total de registros sin filtro ---
+$sqlCountTotal = "SELECT COUNT(*) AS total FROM personal";
+$resultTotal = $conn->query($sqlCountTotal);
+$totalRecords = 0;
+if ($resultTotal) {
+    $rowTotal = $resultTotal->fetch_assoc();
+    $totalRecords = intval($rowTotal['total']);
+}
+
+// --- Conteo total con filtros ---
+$sqlCountFiltered = "SELECT COUNT(*) AS total_filtered " . $sqlBase . $whereSql;
+$stmtCount = $conn->prepare($sqlCountFiltered);
+if ($stmtCount && strlen($paramTypes) > 0) {
+    $stmtCount->bind_param($paramTypes, ...$params);
+}
+$stmtCount->execute();
+$resultFiltered = $stmtCount->get_result();
+$totalFiltered = 0;
+if ($resultFiltered) {
+    $rowFiltered = $resultFiltered->fetch_assoc();
+    $totalFiltered = intval($rowFiltered['total_filtered']);
+}
+$stmtCount->close();
+
+// --- Orden y paginación ---
+$orderColumnIndex = $requestData['order'][0]['column'] ?? 0;
+$orderDir = strtoupper($requestData['order'][0]['dir'] ?? 'ASC');
+
+// Validar orden columna y dirección
+$orderColumn = $columns[$orderColumnIndex] ?? 'personal.id';
+$orderDir = ($orderDir === 'ASC' || $orderDir === 'DESC') ? $orderDir : 'ASC';
+
+// Consulta final con datos
+$sqlData = "
+    SELECT personal.id, personal.nombre, personal.usuario, personal.clave, personal.correo, personal.telefono,
+           departamentos.nombre AS departamento,
+           empresas.nombre AS empresa
+    " . $sqlBase . $whereSql . " 
+    ORDER BY $orderColumn $orderDir
+    LIMIT ?, ?
+";
+
+$stmtData = $conn->prepare($sqlData);
+
+if (!$stmtData) {
+    // Error al preparar
+    http_response_code(500);
+    echo json_encode(['error' => 'Error en consulta SQL']);
+    exit;
+}
+
+// Añadir parámetros para límite y offset
+// bind_param requiere que todos los parámetros estén antes, así que creamos un array
+$paramsData = $params;
+$paramTypesData = $paramTypes . "ii";
+$paramsData[] = $start;
+$paramsData[] = $custom_length;
+
+// Bind params dinámicamente
+$stmtData->bind_param($paramTypesData, ...$paramsData);
+$stmtData->execute();
+$resultData = $stmtData->get_result();
+
+// Construcción de datos para DataTables
+$data = [];
+
+while ($row = $resultData->fetch_assoc()) {
+    $checkbox = '<input type="checkbox" class="row-select" value="' . htmlspecialchars($row['id']) . '">';
+    $nestedData = [];
+    $nestedData[] = $checkbox;
     $nestedData[] = $row["id"];
-    $nestedData[] = $row["nombre"];
-    $nestedData[] = $row["departamento"];
-    $nestedData[] = $row["empresa"];
-    $nestedData[] = $row["usuario"];
-    $nestedData[] = $row["clave"];
-    $nestedData[] = $row["correo"];
-    $nestedData[] = $row["telefono"];
-    
-    $buttons = '
-    <style>
-        #dropdownMenuButton' . $row["id"] . ' i {
-            background-color: grey;
-            color: black;
-            border-radius: 50%;
-            padding: 6px;
-            font-size: 18px;
-            display: inline-block;
-            text-align: center;
-            line-height: 18px;
-        }
-        .table .dropdown { position: relative; text-align: center; }
-        .dropdown-menu {
-            position: absolute;
-            z-index: 10000;
-            display: none;
-            width: 250px;
-            background-color: white;
-            border-radius: 4px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            left: auto;
-            right: 0;
-        }
-        .dropdown-toggle { background-color: transparent; border: none; }
-        td, th { height: 60px; border: 1px solid grey; }
-    </style>
-    <div class="dropdown">
-        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton' . $row["id"] . '">
-            <i class="fa-solid fa-ellipsis" style="color: black;"></i>
-        </button>
-        <ul class="dropdown-menu" id="dropdownMenu' . $row["id"] . '" style="display: none; position: absolute;">
-            <li><a class="dropdown-item" href="#" onclick="editPersonal(' . $row["id"] . ')">Editar</a></li>
-            <li><a class="dropdown-item" href="#" onclick="deletePersonal(' . $row["id"] . ',`' . $row["nombre"] . '`)">Eliminar</a></li>
-            <li><a class="dropdown-item" href="#" onclick="openAssignSurveyModal(' . $row["id"] . ')">Asignar Encuesta</a></li>
-            <hr>
-            <li><a class="dropdown-item" href="#" onclick="sendMail(' . $row["id"] . ')">Enviar credenciales por correo</a></li>
-            <li><a class="dropdown-item" href="#" onclick="sendWhatsapp(' . $row["id"] . ')">Enviar credenciales por Whatsapp</a></li>
-        </ul>
-    </div>
-    ';
+    $nestedData[] = htmlspecialchars($row["nombre"]);
+    $nestedData[] = htmlspecialchars($row["departamento"]);
+    $nestedData[] = htmlspecialchars($row["empresa"]);
+    $nestedData[] = htmlspecialchars($row["usuario"]);
+    $nestedData[] = htmlspecialchars($row["clave"]);
+    $nestedData[] = htmlspecialchars($row["correo"]);
+    $nestedData[] = htmlspecialchars($row["telefono"]);
 
-    $nestedData[] = $buttons;
+
+
     $data[] = $nestedData;
 }
 
-// Respuesta final
-$response = array(
-    "draw" => intval($requestData['draw']),
-    "recordsTotal" => intval($totalFiltered),
-    "recordsFiltered" => intval($totalFiltered),
-    "data" => $data
-);
+$stmtData->close();
 
-header('Content-Type: application/json');
+// Respuesta JSON para DataTables
+$response = [
+    "draw" => intval($requestData['draw'] ?? 0),
+    "recordsTotal" => $totalRecords,
+    "recordsFiltered" => $totalFiltered,
+    "data" => $data
+];
+
+header('Content-Type: application/json; charset=utf-8');
 echo json_encode($response);
+exit;
 ?>

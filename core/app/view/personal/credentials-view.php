@@ -40,7 +40,7 @@ $empresas      = EmpresaData::getAll();
     </div>
 
     <button class="btn btn-primary" onclick="sendMail()">Enviar credenciales por correo</button>
-    <button class="btn btn-primary">Enviar credenciales por Whatsapp</button>
+<button onclick="sendWhatsappMassive()" class="btn btn-success">Enviar WhatsApp Masivo</button>
 
     <br><br>
 
@@ -146,39 +146,109 @@ $empresas      = EmpresaData::getAll();
     });
 
   // Función de envío masivo
-  function sendMail() {
-    var users = [];
-    $('#lookup tbody input.row-select:checked').each(function(){
-      var row = dataTable.row($(this).closest('tr')).data();
-      users.push({
-        id:       row[1],
-        name:     row[2],
-        department: row[3],
-        username: row[4],
-        password: row[5],
-        email:    row[6],
-        phone:    row[7]
-      });
+function sendMail() {
+  var users = [];
+  $('#lookup tbody input.row-select:checked').each(function(){
+    var row = dataTable.row($(this).closest('tr')).data();
+
+    users.push({
+      id: row[0], // como corregimos antes
+      name: row[1],
+      department: row[2],
+      username: row[3],
+      password: row[4],
+      email: row[6],
+      phone: row[7]
     });
+  });
 
-    if (!users.length) {
-      return alert('No hay usuarios seleccionados.');
-    }
+  if (!users.length) {
+    alert('No hay usuarios seleccionados.');
+    return;
+  }
 
+  // Enviar correos uno por uno para que backend reciba $_POST['id']
+  users.forEach(function(user){
     $.ajax({
       url: './?action=notifications/send-massive-mail',
       method: 'POST',
-      contentType: 'application/json',
-      data: JSON.stringify({ users: users }),
+      data: { id: user.id }, // aquí mandamos id simple
       success: function(resp) {
-        var res = JSON.parse(resp);
-        alert(res.success 
-              ? 'Correos enviados exitosamente.' 
-              : 'Errores al enviar:\n' + res.errors.join('\n'));
+        console.log('Respuesta servidor:', resp);
       },
-      error: function() {
-        alert('Error en la petición. Intenta de nuevo.');
+      error: function(xhr, status, error) {
+        console.error('Error al enviar correo:', error);
       }
     });
+  });
+
+  alert('Solicitudes de envío de correo enviadas. Revisa consola para detalles.');
+}
+function sendWhatsappMassive() {
+  console.log("Iniciando función sendWhatsappMassive...");
+
+  const users = [];
+  $('#lookup tbody input.row-select:checked').each(function(index) {
+    const $row = $(this).closest('tr');
+    const row = dataTable.row($row).data();
+
+    console.log(`Procesando fila ${index}:`, row);
+
+    if (!row) {
+      console.warn(`Fila ${index} no tiene datos en DataTable.`);
+      return;
+    }
+
+    const id = row[0]; // Asegúrate de que esta posición contiene el ID
+
+    if (!id) {
+      console.warn(`Fila ${index} tiene id inválido:`, id);
+      return;
+    }
+
+    users.push({ id: id }); // Solo enviamos el ID, el backend se encarga del resto
+  });
+
+  console.log("Usuarios seleccionados para enviar WhatsApp:", users);
+
+  if (!users.length) {
+    alert('No hay usuarios seleccionados.');
+    return;
   }
+
+  $.ajax({
+    url: './?action=notifications/send-massive-whatsapp',
+    method: 'POST',
+    contentType: 'application/json',
+    data: JSON.stringify({ users: users }),
+    beforeSend: function() {
+      console.log("Enviando datos al servidor...");
+    },
+    success: function(resp) {
+      console.log("Respuesta recibida del servidor:", resp);
+      if (resp.success) {
+        resp.results.forEach(function(userResult) {
+          if (userResult.success && userResult.link) {
+            window.open(userResult.link, '_blank');
+          } else {
+            console.error("Error en el resultado de usuario:", userResult);
+          }
+        });
+        alert('Se generaron los links de WhatsApp para los usuarios seleccionados.');
+      } else {
+        alert('Error del servidor: ' + resp.message);
+      }
+    },
+    error: function(jqXHR, textStatus, errorThrown) {
+      console.error("Error en la petición AJAX:", textStatus, errorThrown);
+      alert('Error en la petición. Intenta de nuevo.');
+    },
+    complete: function() {
+      console.log("Petición AJAX finalizada.");
+    }
+  });
+}
+
+
+
 </script>
