@@ -136,7 +136,7 @@ $resultData = $stmtData->get_result();
 $data = [];
 
 while ($row = $resultData->fetch_assoc()) {
-    $checkbox = '<input type="checkbox" class="row-select" value="' . htmlspecialchars($row['id']) . '">';
+$checkbox = sprintf('<input type="checkbox" class="row-select" value="%d">', (int)$row['id']);
     $nestedData = [];
     $nestedData[] = $checkbox;
     $nestedData[] = $row["id"];

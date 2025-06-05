@@ -80,7 +80,6 @@ $empresas = EmpresaData::getAll();
 </div>
 
 
-
     <div class="card" style="width: 100%;  margin-top: 20px">
     <div class="card-body">
         <table id="lookup" class="table table-striped table-hover">
@@ -176,7 +175,7 @@ $empresas = EmpresaData::getAll();
             </div>
         </div>
     </div>   
-    
+      
    <!-- Modal Editar Personal -->
 <div class="modal fade" id="EditPersonalModal" tabindex="-1" role="dialog" aria-labelledby="EditPersonalModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -286,14 +285,11 @@ $empresas = EmpresaData::getAll();
                     </div>
                 </div>
 </div>
-
-
 <script>
-    
-    $(document).ready(function () {
+     $(document).ready(function () {
     // Manejador para el botón de tres puntos
     $(document).on('click', '.dropdown-toggle', function (e) {
-        e.preventDefault();
+
         const menuId = $(this).attr('id').replace('dropdownMenuButton', 'dropdownMenu');
         
         // Cierra otros menús abiertos
@@ -368,8 +364,8 @@ $.ajax({
         console.error("Error al cargar empresas:", error);
     }
 });
-
-// Cargar departamentos al iniciar
+  
+   
 $.ajax({
     url: './?action=departamentos/get-all',
     method: 'GET',
@@ -404,7 +400,6 @@ $('#custom-length').change(function() {
     dataTable.ajax.reload();
 });
 });
-
 
 
 function editPersonal(personalId) {
@@ -676,6 +671,4 @@ function printPersonal() {
     });
 }
 
-
-
-    </script>
+</script>

@@ -293,7 +293,6 @@ $empresas = EmpresaData::getAll();
     $(document).ready(function () {
     // Manejador para el botón de tres puntos
     $(document).on('click', '.dropdown-toggle', function (e) {
-        e.preventDefault();
         const menuId = $(this).attr('id').replace('dropdownMenuButton', 'dropdownMenu');
         
         // Cierra otros menús abiertos

@@ -38,9 +38,48 @@ $empresas      = EmpresaData::getAll();
         </select>
       </div>
     </div>
+<div class="modal fade" id="assignSurveyModal" tabindex="-1" aria-labelledby="assignSurveyModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Asignar Encuesta</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="assignSurveyForm" method="POST" action="./?action=personal/assign-surveys">
+          <!-- Campo oculto para múltiples IDs -->
+<input type="hidden" id="selectedEmployees" name="selectedEmployees" value="">
+
+          <!-- Lista de encuestas (generada con PHP) -->
+          <?php
+          $encuestas = EncuestaData::getAll();
+          if ($encuestas && count($encuestas) > 0) {
+              foreach ($encuestas as $survey) {
+                  echo '
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="surveys[]" value="' . $survey->id . '" id="survey' . $survey->id . '">
+                    <label class="form-check-label" for="survey' . $survey->id . '">
+                      ' . htmlspecialchars($survey->title) . ' - <small>' . htmlspecialchars($survey->description) . '</small>
+                    </label>
+                  </div>';
+              }
+          } else {
+              echo '<p>No se encontraron encuestas disponibles.</p>';
+          }
+          ?>
+
+          <button type="submit" class="btn btn-primary mt-3">Asignar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
 
     <button class="btn btn-primary" onclick="sendMail()">Enviar credenciales por correo</button>
 <button onclick="sendWhatsappMassive()" class="btn btn-success">Enviar WhatsApp Masivo</button>
+<button type="button" class="btn btn-warning" onclick="openAssignSurveyModal()">Asignar Encuestas</button>
 
     <br><br>
 
@@ -63,7 +102,97 @@ $empresas      = EmpresaData::getAll();
 </div>
 
 <script>
-  // Hacemos dataTable global para usarlo en filtros
+function openAssignSurveyModal() {
+    let selected = [];
+
+    // ✅ Captura solo el valor del checkbox (el ID)
+    $('input[type="checkbox"].row-select:checked').each(function () {
+        const id = $(this).val(); // ✅ aquí está el error: asegúrate de usar `.val()` y no `$(this)`
+        console.log('Checkbox empleado seleccionado con valor:', id);
+        selected.push(id);
+    });
+
+    console.log("Lista de empleados seleccionados en openAssignSurveyModal:", selected);
+
+    // ✅ Asigna el array como string separado por comas
+    $('#selectedEmployees').val(selected.join(','));
+    console.log("Input oculto #selectedEmployees actualizado con:", $('#selectedEmployees').val());
+
+    $('#assignSurveyModal').modal('show');
+}
+
+$(document).ready(function () {
+    console.log('Documento listo, configurando eventos');
+
+    // Abrir modal cuando se da click al botón
+    $('#btnAssignSurveys').click(function () {
+        console.log('Botón btnAssignSurveys clickeado');
+
+        let selectedIds = [];
+        // Obtener IDs de empleados seleccionados en la tabla (checkboxes marcados)
+        $('#lookup tbody input[type="checkbox"]:checked').each(function () {
+            let idEmpleado = $(this).closest('tr').find('td:nth-child(2)').text().trim();
+            console.log('Empleado seleccionado (ID extraído de la tabla):', idEmpleado);
+            selectedIds.push(idEmpleado);
+        });
+
+        console.log('Lista completa de empleados seleccionados:', selectedIds);
+
+        if (selectedIds.length === 0) {
+            alert('Por favor selecciona al menos un empleado.');
+            console.warn('No hay empleados seleccionados al intentar abrir modal');
+            return;
+        }
+
+        // Guardar IDs en el input oculto que el backend espera
+$('#selectedEmployees').val(selected.join(','));
+console.log("Lista de empleados seleccionados en openAssignSurveyModal:", selected);
+console.log("Input oculto #selectedEmployees actualizado con:", $('#selectedEmployees').val());
+
+        // Mostrar modal
+        $('#assignSurveyModal').modal('show');
+        console.log('Modal assignSurveyModal mostrado');
+    });
+
+    // Enviar formulario por AJAX
+    $('#assignSurveyForm').submit(function (e) {
+        e.preventDefault();
+        console.log('Formulario assignSurveyForm enviado');
+
+        const formData = $(this).serialize();
+        console.log('Datos serializados para enviar:', formData);
+
+        $.ajax({
+            url: './?action=encuestas/assign-surveys',  // Cambia la URL si es necesario
+            type: 'POST',
+            data: formData,
+            dataType: 'json',
+            success: function (response) {
+                console.log('Respuesta recibida del servidor:', response);
+
+                if (response.status === 'success') {
+                    alert(response.message);
+                    console.log('Encuestas asignadas correctamente');
+                    $('#assignSurveyModal').modal('hide');
+
+                    // Opcional: desmarcar checkboxes después de asignar
+                    $('#lookup tbody input[type="checkbox"]:checked').prop('checked', false);
+                    console.log('Checkboxes desmarcados después de asignar');
+                } else {
+                    alert(response.message);
+                    console.warn('Error recibido del backend:', response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error('Error en la solicitud AJAX:', status, error);
+                alert('Error en la solicitud, intenta de nuevo.');
+            }
+        });
+    });
+});
+
+
+
   var dataTable;
 
   $(document).ready(function() {
@@ -113,9 +242,9 @@ $empresas      = EmpresaData::getAll();
         { // checkbox
           data: 0,
           orderable: false,
-          render: function(id) {
-            return '<input type="checkbox" class="row-select" value="'+id+'">';
-          }
+               render: function(checkboxHtml) {
+      return checkboxHtml; // simplemente devuelves el checkbox que envía el backend
+    }
         },
         { data: 1 }, // id
         { data: 2 }, // nombre
