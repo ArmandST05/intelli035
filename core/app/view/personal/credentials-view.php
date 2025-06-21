@@ -90,6 +90,7 @@ $empresas      = EmpresaData::getAll();
           <th>#</th>
           <th>Nombre</th>
           <th>Departamento / Puesto</th>
+          <th>Empresa</th>
           <th>Usuario</th>
           <th>Clave</th>
           <th>Correo</th>
@@ -252,7 +253,8 @@ console.log("Input oculto #selectedEmployees actualizado con:", $('#selectedEmpl
         { data: 4 }, // usuario
         { data: 5 }, // clave
         { data: 6 }, // correo
-        { data: 7 }  // teléfono
+        { data: 7 },  // teléfono
+        { data: 8 }
       ]
     });
 
